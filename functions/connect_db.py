@@ -4,7 +4,7 @@ def fn_exec_querie(sql):
 
     # Conectar ao MySQL
     mydb = mysql.connector.connect(
-    host="192.168.0.226",
+    host="hostname",
     user="svc_report",
     password="report",
     database="suporte"
