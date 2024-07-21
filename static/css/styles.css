@@ -240,3 +240,26 @@ td i.fa {
     left: 50%;
     margin-left: -585px;
   }
+  .centered-content {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+  }
+  .ms-1 {
+    margin-left: 8px; /* Espaço à esquerda do ícone */
+  }
+  td {
+    vertical-align: middle; /* Centraliza verticalmente na célula */
+  }
+  .table {
+    table-layout: fixed; /* Layout de tabela fixa */
+    width: 100%; /* Certifica-se de que a tabela ocupe toda a largura disponível */
+  }
+  .table th, .table td {
+    /*text-align: center; /* Alinha o texto ao centro */
+    overflow: hidden; /* Esconde o texto que ultrapassar a largura da célula */
+    white-space: nowrap; /* Evita que o texto quebre para a próxima linha */
+    text-overflow: ellipsis; /* Adiciona "..." ao texto que ultrapassar a largura da célula */
+  }
+  .table tbody tr {
+    height: 30px; /* Altura fixa para todas as linhas da tabela */
+  }

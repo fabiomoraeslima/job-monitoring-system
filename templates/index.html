@@ -7,95 +7,160 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_navbar.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='icons/favicon.ico') }}">
     <title>Monitoramento ABAI</title>
-    <style>
-      .centered-content {
-        display: flex;
-        align-items: center; /* Centraliza verticalmente */
-      }
-      .ms-1 {
-        margin-left: 8px; /* Espaço à esquerda do ícone */
-      }
-      td {
-        vertical-align: middle; /* Centraliza verticalmente na célula */
-      }
-    </style>
 </head>
 <body>
-
-    <div class="container mt-5 px-2 ">
-    
-        <h3 class="sliderText1"> Gestão Pipelines</h3>
-
-          <div class="mb-2 d-flex justify-content-between align-items-center">
-            
-            <div class="position-relative">
-                <span class="position-absolute search"><i class="fa fa-search"></i></span>
-                <input class="form-control w-100" id="search-input" placeholder="Search by ...">
-            </div>
-            
-            <div class="px-2">
-                
-                <span>Filters <i class="fa fa-angle-down"></i></span>
-                <i class="fa fa-ellipsis-h ms-3"></i>
-            </div>           
+    <!-- Barra de Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://www.abaigroup.com/pt-br/abai-brasil/" target="_blank" rel="noopener noreferrer">
+          <img src="https://www.abaigroup.com/wp-content/uploads/2024/03/logo-white.png" alt="Logo da ABAI">
+          Gestão Pipelines
+      </a>       
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Apache NiFi</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Relatorios</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                  </li>
+              </ul>
           </div>
-          
-        <div class="table-container" style= "z-index: 1000; background-color: white;">
-
-          <table class="table table-striped table-hover" >
-            <thead>
-            <tr class="table-dark">
-              <th scope="col" width="5%"><input class="form-check-input" type="checkbox"></th>
-              <th scope="col" width="5%">Job id</th>
-              <th scope="col" width="10%">Data Inicio</th>
-              <th scope="col" width="10%">Hora inicio</th>
-              <th scope="col" width="30%">Job Name</th>
-              <th scope="col" width="10%">Cliente</th>
-              <th scope="col" width="15%"><span>Tempo Execucão</span></th>
-              <th scope="col" width="15%" >Status</th>  
-            </tr>
-          </thead>
-          <tbody>
-            {% for dado in dados %}
-            <tr>
-              <th scope="row"><input class="form-check-input" type="checkbox"></th>
-              <td>{{ dado[0] }}</td>
-              <td>{{ dado[1] }}</td>
-              <td>{{ dado[2] }}</td>
-              <td><img src="{{ url_for('static', filename='imagens/tecnologia.png') }}" width="20"> {{ dado[3] }}</td>
-              <td>{{ dado[4] }}</td>
-              <td>
-                <img src="{{ url_for('static', filename='imagens/tempo-rapido.png') }}" width="20">  {{ dado[6] }}</td>
-              <td class="centered-content">
-                {% if dado[7] == 1 %}
-                  <i class="fa fa-dot-circle-o text-secondary "></i><span class="ms-1">{{ dado[8] }}</span>
-                {% elif dado[7] == 2 %}
-                  <i class="fa fa-dot-circle-o text-primary"></i><span class="ms-1">{{ dado[8] }}</span>
-                {% elif dado[7]== 3 %}
-                  <i class="fa fa-check-circle-o green"></i><span class="ms-1">{{ dado[8] }}</span>
-                {% elif dado[7]== 4 %}
-                  <i class="fa fa-dot-circle-o text-danger"></i><span class="ms-1">{{ dado[8] }}</span>
-                {% elif dado[7]== 5 %}
-                  <i class="fa fa-dot-circle-o text-warning"></i><span class="ms-1">{{ dado[8] }}</span>
-                {% elif dado[7]== 6 %}
-                  <i class="fa fa-dot-circle-o text-info"></i><span class="ms-1">{{ dado[8] }}</span>
-                {% elif dado[7]== 6 %}
-                  <i class="fa fa-dot-circle-o text-dark"></i><span class="ms-1">{{ dado[8] }}</span>
-                {% else %}
-                  {{ dado[8] }}
-                {% endif %}
-              </td>
-            </tr>
-          {% endfor %}
-          </tbody>
-    </table>
-  </div>    
       </div>
+  </nav>
+
+  <div class="separator"></div> <!-- Div separadora -->
+
+    <div class="container mt-5 px-2">
+      <h3 class="sliderText1">Gestão Pipelines</h3>
+      <div class="mb-2 d-flex justify-content-between align-items-center">
+          <div class="position-relative">
+          </div>
+          <div class="px-2">
+
+          </div>           
+      </div>
+        <div class="table-container" style="z-index: 1000; background-color: white; ">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col" width="8.0%">Data Inicio</th>
+                        <th scope="col" width="8.0%">Hora inicio</th>
+                        <th scope="col" width="22.0%">Job Name</th>
+                        <th scope="col" width="10.0%">Cliente</th>
+                        <th scope="col" width="10.0%">Tempo Execução</th>
+                        <th scope="col" width="10.0%">Job Status</th>
+                        <th scope="col" width="20.0%">Log Execucao</th>
+                        <th scope="col" width="8.0%">Script</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dado in dados %}
+                    <tr>
+                        <td>{{ dado[1] }}</td>
+                        <td>{{ dado[2] }}</td>
+                        <td><img src="{{ url_for('static', filename='imagens/tecnologia.png') }}" width="20"> {{ dado[3] }}</td>
+                        <td>{{ dado[4] }}</td>
+                        <td><img src="{{ url_for('static', filename='imagens/tempo-rapido.png') }}" width="20"> {{ dado[6] }}</td>
+                        <td class="centered-content" style="padding-top: 10px; padding-bottom: 12px">
+                            {% if dado[7] == 1 %}
+                                <i class="fa fa-dot-circle-o text-secondary"></i><span class="ms-1">{{ dado[8] }}</span>
+                            {% elif dado[7] == 2 %}
+                                <i class="fa fa-dot-circle-o text-primary"></i><span class="ms-1">{{ dado[8] }}</span>
+                            {% elif dado[7] == 3 %}
+                                <i class="fa fa-check-circle-o green"></i><span class="ms-1">{{ dado[8] }}</span>
+                            {% elif dado[7] == 4 %}
+                                <i class="fa fa-dot-circle-o text-danger"></i><span class="ms-1">{{ dado[8] }}</span>
+                            {% elif dado[7] == 5 %}
+                                <i class="fa fa-dot-circle-o text-warning"></i><span class="ms-1">{{ dado[8] }}</span>
+                            {% elif dado[7] == 6 %}
+                                <i class="fa fa-dot-circle-o text-info"></i><span class="ms-1">{{ dado[8] }}</span>
+                            {% elif dado[7] == 6 %}
+                                <i class="fa fa-dot-circle-o text-dark"></i><span class="ms-1">{{ dado[8] }}</span>
+                            {% else %}
+                                {{ dado[8] }}
+                            {% endif %}
+                        </td>
+                        <td>{{ dado[9] }}</td>
+                        
+                        <td><button class="btn btn-secondary btn-sm" onclick="executarScript('{{ dado[0] }}', '{{ dado[3] }}')">Executar</button></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>    
+    </div>
 
     <!-- Importando JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script para atualizar a página a cada 5 minutos -->
+    <script>
+        function atualizarPagina() {
+            window.location.reload(); // Atualiza a página
+          }
+  
+          // Atualiza a página a cada 300.000 milissegundos (5 minutos)
+          setInterval(atualizarPagina, 30000);
+      </script>
+    <!-- Função JavaScript para executar script -->
+    <script>
+      function executarScript(jobId, jobName) {
+        var confirmAction = confirm(`Tem certeza que deseja executar o script para o job: ${jobName}?`);
+        if (confirmAction) {
+          fetch('/executar_script', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ job_id: jobId })
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              alert('Script executado com sucesso!');
+            } else {
+              alert('Falha ao executar o script.');
+            }
+          })
+          .catch(error => console.error('Erro:', error));
+        }
+      }
+
+      function filterTable() {
+        var input, filter, table, tr, td, i, j, txtValue;
+        input = document.getElementById("search-input");
+        filter = input.value.toLowerCase();
+        table = document.getElementById("data-table");
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 1; i < tr.length; i++) {
+          tr[i].style.display = "none";
+          td = tr[i].getElementsByTagName("td");
+          for (j = 0; j < td.length; j++) {
+            if (td[j]) {
+              txtValue = td[j].textContent || td[j].innerText;
+              if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+                break;
+              }
+            }
+          }
+        }
+      }
+    </script>
 </body>
 </html>

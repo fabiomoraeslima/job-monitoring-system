@@ -32,14 +32,14 @@ def fn_exec_querie(sql):
     return resultados
 
 
-def fn_start_process(job_id, status = 2 ):
+def fn_start_process(job_id, status = 2, mensagem=''):
 
     # Script para validar se o Job está em execução
     sql = f""" select * from log_execucao where job_id = '{job_id}' and data_hora_fim is null """
 
     # Script de insert com inicio do Processo 
     insert_sql = f""" insert into log_execucao (job_id, data_hora_inicio, status, mensagem) 
-                    values ({job_id},CONVERT_TZ(NOW(), 'UTC', 'America/Sao_Paulo'),'{status}','');
+                    values ({job_id},CONVERT_TZ(NOW(), 'UTC', 'America/Sao_Paulo'),'{status}','{mensagem}');
     """
 
     if fn_exec_querie(sql):
@@ -48,11 +48,12 @@ def fn_start_process(job_id, status = 2 ):
         fn_exec_querie(insert_sql)
         return print("Processo Iniciado")
 
-def fn_end_process(job_id, status = 3):
+def fn_end_process(job_id, status = 3, mensagem=''):
 
     update_sql = f""" update log_execucao 
                         set data_hora_fim = CONVERT_TZ(NOW(), 'UTC', 'America/Sao_Paulo'),
-                            status = {status} 
+                            status = {status},
+                            mensagem = '{mensagem}' 
                         where job_id = '{job_id}' and data_hora_fim is null """
 
     fn_exec_querie(update_sql)
