@@ -1,0 +1,78 @@
+/* Red: F24865, Light Gray: F4F4F4, Blue: 45CAE6, Green: 09C775, Dark Gray: 797979 */
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,300,700);
+
+.navbar-custom {
+    background-color: rgba(2, 2, 44, 0.7);
+    color: white; /* Cor do texto branca */
+    width: 93%; /* Largura da barra de navegação */
+    padding: 30px;
+    margin: 0 auto; /* Centraliza a barra de navegação horizontalmente */
+    border-radius: 6px; /* Borda arredondada */
+
+}
+
+.navbar-custom .navbar-nav .nav-link {
+    color: white; /* Cor dos links na barra de navegação */
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para cor de fundo e texto */
+    
+}
+
+.navbar-custom .navbar-brand {
+    color: white; /* Cor do nome da marca */
+    transition: color 0.3s; /* Transição suave para cor do texto */
+}
+
+.navbar-custom .dropdown-menu {
+    color: white; /* Cor dos itens do dropdown */
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para cor de fundo e texto */
+}
+
+.navbar-custom .dropdown-item {
+    color: white; /* Cor dos itens do dropdown */
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para cor de fundo e texto */
+}
+
+.navbar-custom .dropdown-item:hover {
+    /*background-color: rgba(255, 255, 255, 0.1); /* Cor do fundo do item do dropdown ao passar o mouse */
+    background-color: white;
+}
+
+/* Estilos ao passar o mouse sobre o link da navegação */
+.navbar-custom .navbar-nav .nav-link:hover {
+    background-color: white; /* Fundo branco ao passar o mouse */
+    color: navy; /* Cor do texto preta ao passar o mouse */
+    font-weight: bold;
+}
+
+/* Estilos ao passar o mouse sobre a marca */
+.navbar-custom .navbar-brand:hover {
+    /*background-color: white; /* Fundo branco ao passar o mouse */
+    color: white;  /* Cor do texto preta ao passar o mouse */
+    font-weight: bold;
+}
+
+/* Estilos ao passar o mouse sobre o menu dropdown */
+.navbar-custom .dropdown-menu:hover {
+    background-color: white; /* Fundo branco do dropdown ao passar o mouse */
+    color: black; /* Cor do texto do dropdown ao passar o mouse */
+}
+
+.navbar-custom .dropdown-item:hover {
+    background-color: white;
+    color: navy; /* Cor dos itens do dropdown ao passar o mouse */
+}
+.navbar-custom .navbar-brand img {
+    height: 40px; /* Ajusta a altura do logo para 30px */
+    margin-right: 10px; /* Espaço à direita do logo */
+}
+/* Estilo para quando o item de menu está ativo (clicado) */
+.navbar-custom a:active,
+.navbar-custom a:focus {
+    color: navy; /* Cor da fonte quando clicado */
+    background-color: white; /* Fundo quando clicado */
+}
+.separator {
+    /*height: 20px; /* Altura do separador */
+    background-color: #f0f0f0; /* Cor de fundo do separador */
+    margin-bottom: 115px; /* Espaço abaixo do separador */
+}
