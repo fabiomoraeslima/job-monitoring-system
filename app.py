@@ -57,7 +57,7 @@ def executar_meu_script(job_id):
         return False
     
 if __name__ == '__main__':
-    app.run(debug=True, host='192.168.0.194', port=5000)
+    app.run(debug=True, host='127.0.0.1', port=5000)
     # dados = dashboard.fn_exec_querie()
     # print(type(dados))
     # for dado in dados:

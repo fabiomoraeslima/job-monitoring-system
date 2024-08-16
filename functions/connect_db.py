@@ -1,13 +1,17 @@
 import mysql.connector
+import os 
+from dotenv import load_dotenv, find_dotenv
+
+_ = load_dotenv(find_dotenv())
 
 def fn_exec_querie(sql):
 
     # Conectar ao MySQL
     mydb = mysql.connector.connect(
-    host="192.168.0.226",
-    user="svc_report",
-    password="report",
-    database="suporte"
+    host = os.getenv("MYSQL_HOST"),
+    user = os.getenv("MYSQL_USER"),
+    password = os.getenv("MYSQL_PASSWORD"),
+    database= os.getenv("MYSQL_DATABASE")
     )
 
     # Criar um cursor para executar consultas
