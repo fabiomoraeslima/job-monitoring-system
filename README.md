@@ -6,18 +6,20 @@ Projeto para criar Front-end de Monitoria de Jobs.
 
 <h2> Tecnologias Utilizadas </h2>
 
-<div style="display: flex; justify-content: flex-start; gap: 50px;" class="checklist">
-  <div style="width: 100px;"><ul><li>Python</li></ul></div>
-  <div style="width: 100px;"><ul><li>Flask</li></ul></div>
-</div>
-
-<div style="display: flex; justify-content: flex-start; gap: 50px;" class="checklist">
-  <div style="width: 100px;"><ul><li>HTML</li></ul></div>
-  <div style="width: 100px;"><ul><li>CSS</li></ul></div>
-</div>
-
-<div style="display: flex; justify-content: flex-start; gap: 50px;" class="checklist">
-  <div style="width: 100px;"><ul><li>MySQL</li></ul></div>
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <ul>
+      <li>✅ Python</li>
+      <li>✅ Flask</li>
+      <li>✅ MySQL</li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li>✅ HTML</li>
+      <li>✅ CSS</li>
+    </ul>
+  </div>
 </div>
 
 <h2> Passo a passo</h2>
